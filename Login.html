@@ -10,7 +10,7 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
-    <title>Collections</title>
+    <title>Login</title>
 </head>
 
 <body>
@@ -305,120 +305,200 @@
             </div>
             <a style="color: white; font-size:25px;" href="basket.html"><i class="fa-regular fa-bookmark mx-3"></i></a>
         </nav>
-    </header>   
-
+    </header>
     <main>
-        <section id="collectionTop">
-            <div class="title text-center">
-                <h4>Collections (18)</h4>
+            <section id="Login">
+                <div class="container">
+                    <div class="title text-center">
+                        <h3>Sign In to Vudu</h3>
+                    </div>
+                    <div  class="d-flex justify-content-center mt-5">
+                        <input type="email" class="form-control "  placeholder=" Vudu Email">
+                    </div>
+                   
+                    <div class="d-flex justify-content-center mt-4 PasswordLogin">
+                        <div class="iconType" onclick="PasswordShowHidden()">
+                            <i id="hide1" class="fa-solid fa-eye-slash"></i>
+                            <i id="hide2" class="fa-solid fa-eye"></i>
+                        </div>
+                        <input type="password" class="form-control " id="myInput" placeholder=" Vudu Password" >
+                    </div>
+                    <div class="d-flex justify-content-end forgotPw mt-4">
+                        <a href="">Forgot Password</a>
+                    </div>
+                    <div class="lgnBtn d-flex justify-content-center mt-4 ">
+                            <button class="btn mb-3">Sign In</button>
+                       
+                    </div>
+                    <div class="text-center ">
+                        <a href="Register.html">Create New Account</a>
+                    </div>
+                </div>
+            </section>
+    </main>
+    <hr>
+    <footer>
+        <div class="container">
+            <div class="row justify-content-between mt-4 download ">
+                <div class="w-25">
+                    <a href="https://apps.apple.com/us/app/vudu-player-movies-tv/id487285735"> <img class="w-100" src="assets/img/Footer/itunes.png" alt=""></a>
+                </div>
+                <div class="w-25">
+                    <a href="https://play.google.com/store/apps/details?id=air.com.vudu.air.DownloaderTablet"><img class="w-100" src="assets/img/Footer/Screenshot 2022-07-13 114225.png" alt=""></a>
+                </div>
+                <div class="w-25">
+                    <a href="https://apps.microsoft.com/store/detail/9NBLGGH4V68B?hl=en-az&gl=AZ"> <img class="w-75" src="assets/img/Footer/windows.png" alt=""></a>
+                </div>
             </div>
-        </section>
-        <section id="collectionMovies">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Collections/1.jpg" alt=""></a>
+            <div class="ButtonEnd row justify-content-center ">
+                <a href="Register.html"><button class="btn btn-primary ">Sign Up</button></a>
+            </div>
+            <hr>
+            <div class=" respFooter">
+                <ul class="text-center">
+                    <li class="footerToggle">Watch <i class="fa-solid fa-angle-down ml-1"></i>
+                        <hr>
+                        <div class=" footerSelect mt-1">
+                            <ul>
+                                <li><a href="movieslist.html">Movies</a></li>
+                                <li><a href="">TV</a></li>
+                                <li><a href="Free.html">Free</a></li>
+                            </ul>
+                            <hr>
                         </div>
-                    </div>
-                    
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Releases/13-1.jpg" alt=""></a>
+
+                    </li>
+
+                    <li class="footerToggle">My Account <i class="fa-solid fa-angle-down"></i>
+                        <hr>
+                        <div class="footerSelect mt-1">
+                            <ul>
+                                <li><a href="Login.html">My Vudu</a></li>
+                            </ul>
+                            <hr>
                         </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Collections/2.jpg" alt=""></a>
+                    </li>
+                    <li class="footerToggle">Feature <i class="fa-solid fa-angle-down"></i>
+                        <hr>
+                        <div class=" footerSelect mt-1">
+                            <ul>
+                                <li><a href="">Lists</a></li>
+                                <li><a href="">Family</a></li>
+                                <li><a href="">Disc to Digital</a></li>
+                                <li><a href="">Movies Anywhere</a></li>
+                            </ul>
+                            <hr>
                         </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Collections/3.jpg" alt=""></a>
+                    </li>
+                    <li class="footerToggle">Help <i class="fa-solid fa-angle-down"></i>
+                        <hr>
+                        <div class="footerSelect mt-1">
+                            <ul>
+                                <li><a href="">About Us</a></li>
+                                <li><a href="">Devices</a></li>
+                                <li><a href="">Customer Support</a></li>
+                                <li><a href="">Forums</a></li>
+                                <li><a href="">Contact Us</a></li>
+                                <li><a href="">Advertise</a></li>
+                            </ul>
+                            <hr>
                         </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Collections/4.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Releases/13-2.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Collections/5.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Collections/6.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Collections/7.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Collections/8.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Collections/9.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Collections/10.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Collections/11.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Collections/12.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Releases/13-3.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Releases/13-4.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Releases/13-5.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 cardReleases">
-                        <div class="img">
-                            <a href=""><img class="w-100" src="assets/img/Releases/13-6.jpg" alt=""></a>
-                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="row cards ">
+                <div class="col-lg-2">
+                    <h5>Watch</h5>
+                    <ul>
+                        <li><a href="">Spotlight</a></li>
+                        <li><a href="movieslist.html">Movies</a></li>
+                        <li><a href="">TV</a></li>
+                        <li><a href="Free.html">Free</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5>My Account</h5>
+                    <ul>
+                        <li><a href="Login.html">My Vudu</a></li>
+                        <li><a href="Login.html">Account</a></li>
+                        <li><a href="">Settings</a></li>
+                        <li><a href="">Manage Devices</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Features</h5>
+                    <ul>
+                        <li><a href="">Lists</a></li>
+                        <li><a href="">Family</a></li>
+                        <li><a href="">Disc to Digital</a></li>
+                        <li><a href="">Movies Anywhere</a></li>
+                        <li><a href="">InstaWatch</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Help</h5>
+                    <ul>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Devices</a></li>
+                        <li><a href="">Customer Support</a></li>
+                        <li><a href="">Forums</a></li>
+                        <li><a href="">Contact Us</a></li>
+                        <li><a href="">Advertise</a></li>
+                        <li><a href="">Accessibility</a></li>
+                        <li><a href="">Jobs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row social-media justify-content-end  ">
+                <div class="col-lg-6 w-100">
+                    <div class="icons d-flex w-50 mx-5">
+                        <div class="icon rounded-circle  mx-2 bg-primary"> <a href="https://www.linkedin.com/authwall?trk=gf&trkInfo=AQEfUAjB4LJijQAAAYIx3Yt4dDj2OWkKju5g0iF1GdqjMGV1_mWrkq3ylro9HVdy6XiP7nB_OdQaVM3k0z86J6ImdYRmkCzLz4mAcr3ISOqHeNmtnmuPejlZnTLgfJ9VhTW6mfM=&original_referer=https://www.vudu.com/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fvudu%2F"><i
+                                    class="fa-brands fa-linkedin"></i></a> </div>
+                        <div style="background-color: #3b5998;" class="icon rounded-circle   mx-2"> <a href="https://www.facebook.com/vudufans?ref=ts"><i
+                                    class="fa-brands fa-facebook "></i></a> </div>
+                        <div class="icon rounded-circle   mx-2 bg-primary"> <a href="https://twitter.com/vudusupport"><i
+                                    class="fa-brands fa-twitter"></i></a> </div>
+                        <div style="background-color: red;" class="icon rounded-circle mx-2"> <a href="https://www.youtube.com/c/vudu"><i
+                                    class="fa-brands fa-youtube"></i></a> </div>
                     </div>
                 </div>
             </div>
-        </section>
-      
-    </main>
+            <div class="footerEnd row justify-content-between ">
+                <div class="d-flex justify-content-between ">
+                    <div class="end ">
+                        <a href="https://www.fandango.com/policies/terms-and-policies">Terms and Policies</a>
+                    </div>
+                    <div class="end ">
+                        <a href="https://www.fandango.com/policies/privacy-policy">Your Privacy Rights - Privacy Policy</a>
+                    </div>
+                    <div class="end ">
+                        <a href="https://www.fandango.com/policies/cookies-and-tracking#cookie_management">AdChoices</a>
+                    </div>
+                    <div class="end ">
+                        <a href="https://privacyportal-cdn.onetrust.com/dsarwebform/17e5cb00-ad90-47f5-a58d-77597d9d2c16/32a60552-d51c-4734-9c16-70a45aa78080.html">Do Not Sell My Personal Information</a>
+                    </div>
+                    <div class="end ">
+                        <a href="https://www.fandango.com/policies/privacy-policy#personal-information-we-collect-and-purposes">California Notice</a>
+                    </div>
+                    <div class="end">
+                        <a href="">FeedBack</a>
+                    </div>
+                </div>
+                <div class="">
+                    <span>© 2022 Fandango</span>
+                </div>
+            </div>
+        </div>
+
+    </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"

@@ -14,7 +14,106 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 2;
+  z-index: 3;
+}
+header #releases .cardReleases {
+  margin-top: 2%;
+  position: relative;
+}
+header #releases .cardReleases .description {
+  position: absolute;
+  background-color: #011629;
+  opacity: 87%;
+  height: 100%;
+  width: 84.5%;
+  color: white;
+  top: 0;
+  visibility: hidden;
+}
+header #releases .cardReleases .description a {
+  text-decoration: none;
+  color: white;
+}
+header #releases .cardReleases .description span {
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  padding: 8px;
+}
+header #releases .cardReleases .description .icon {
+  margin-top: 10%;
+  color: orange;
+  padding-left: 8px;
+}
+header #releases .cardReleases .description .icon i {
+  font-size: 12px;
+}
+header #releases .cardReleases .description .plus {
+  color: #0470b8;
+  padding-left: 8px;
+}
+header #releases .cardReleases .description .check i {
+  color: green;
+}
+header #releases .cardReleases .description .buttonTr {
+  margin-top: 10%;
+  width: 100%;
+}
+header #releases .cardReleases .description .buttonTr button {
+  background-color: #011629;
+  width: 100%;
+  border-radius: 8px;
+  color: white;
+  border: 1px solid #0470b8;
+  font-weight: 500;
+}
+header #releases .cardReleases .description .buttonTr button:hover {
+  color: gray;
+}
+header #releases .cardReleases:hover .description {
+  opacity: 85%;
+  visibility: visible;
+}
+header .overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #011629;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+header .overlay-content {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  height: 20vh;
+  background-color: white;
+  z-index: 5;
+}
+header .overlay-content input {
+  color: #333333;
+  height: 100%;
+  font-size: 30px;
+  font-weight: 400;
+  border: none;
+  width: 90%;
+}
+header .overlay-content input:focus {
+  outline: none !important;
+}
+header .overlay a {
+  text-decoration: none;
+  font-size: 36px;
+  display: block;
+  transition: 0.3s;
+}
+header .overlay .closebtn {
+  position: absolute;
+  font-size: 60px;
+  color: black;
 }
 header .logo {
   color: white;
@@ -51,6 +150,9 @@ header .wrapper .mega_menu .sub_menu ul li a {
 header .wrapper .mega_menu .sub_menu ul li a:hover {
   color: rgb(150, 148, 148);
 }
+header .wrapper .mega_menu .sub_menu .categoryMovies {
+  z-index: 1;
+}
 header .wrapper .mega_menu ul li {
   display: inline-block;
   padding: 5px;
@@ -59,7 +161,7 @@ header .wrapper .mega_menu ul li .sub_menu {
   background-color: #022b4f;
   position: absolute;
   width: 100%;
-  top: 60px;
+  padding-top: 60px;
   padding: 25px 15px;
   display: flex;
   justify-content: space-around;
@@ -147,6 +249,9 @@ header .categoriesOne .categories ul li a {
   text-decoration: none;
   color: white;
 }
+header nav button:focus {
+  outline: none;
+}
 
 main {
   margin-top: 4%;
@@ -158,11 +263,8 @@ main .mainTop {
 main .mainTop img {
   padding-right: 4%;
 }
-main #slider {
-  z-index: -1;
-}
-main #slider img {
-  z-index: -1;
+main #slider ol {
+  z-index: 1;
 }
 main #slider ol li {
   width: 10px;
@@ -199,7 +301,6 @@ main #releases .cardReleases .description {
   width: 84.5%;
   color: white;
   top: 0;
-  opacity: 0;
   visibility: hidden;
 }
 main #releases .cardReleases .description a {
@@ -270,6 +371,21 @@ footer .cards ul li a {
 footer .cards ul li a:hover {
   color: white;
 }
+footer .download {
+  width: 45%;
+}
+footer .ButtonEnd {
+  width: 90%;
+  display: none !important;
+}
+footer .ButtonEnd a {
+  width: 100%;
+  margin-top: 3%;
+  margin-left: 4%;
+}
+footer .ButtonEnd a button {
+  width: 100%;
+}
 footer .icons {
   display: flex;
   justify-content: end;
@@ -293,6 +409,22 @@ footer .icons .icon a i {
   color: white;
   margin-top: 10px;
 }
+footer .respFooter {
+  display: none;
+}
+footer .respFooter ul li {
+  list-style: none;
+  color: #a4b9be;
+  cursor: pointer;
+}
+footer .respFooter .footerToggle .footerSelect ul li {
+  list-style: none;
+  margin-top: 10px;
+}
+footer .respFooter .footerToggle .footerSelect ul li a {
+  text-decoration: none;
+  color: #a4b9be;
+}
 footer .footerEnd {
   width: 100%;
 }
@@ -302,11 +434,18 @@ footer .footerEnd .end a {
   padding-right: 10px;
   font-size: 12px;
 }
+footer .footerSelect {
+  max-height: 0;
+  overflow: hidden;
+}
+footer .footerToggle.active .footerSelect {
+  max-height: 300px;
+}
+footer .footerToggle.active i {
+  transform: rotate(180deg);
+}
 
 @media screen and (max-width: 992px) {
-  .carousel {
-    z-index: -1;
-  }
   main #releases .cardReleases {
     width: 16%;
     margin: 0;
@@ -332,6 +471,34 @@ footer .footerEnd .end a {
     display: none;
   }
   header .mega_menu .sub_menu .categoryMovies {
+    display: none;
+  }
+}
+@media screen and (max-width: 992px) {
+  footer .download {
+    width: 100%;
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+  }
+  footer .download div {
+    width: 100%;
+    margin-left: 3%;
+  }
+  footer .download div .img {
+    width: 100%;
+  }
+  footer .ButtonEnd {
+    margin-top: 3%;
+    display: block !important;
+  }
+  footer .cards {
+    display: none;
+  }
+  footer .respFooter {
+    display: block;
+  }
+  footer .footerEnd {
     display: none;
   }
 }
@@ -736,14 +903,16 @@ footer .footerEnd .end a {
   }
 }
 @media screen and (max-width: 992px) {
-  #headerBottom .sub {
-    display: none;
+  #headerBottom .maintitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #headerBottom .sub button {
+    width: 100%;
   }
   #headerBottom .filterAll {
-    display: none;
-  }
-  #headerBottom .respmenuIcon {
-    display: block !important;
+    height: 60vh;
   }
 }
 #orderTop {
@@ -1398,6 +1567,73 @@ footer .footerEnd .end a {
     margin-top: 8%;
   }
 }
+#FreeNews .cardReleases {
+  position: relative;
+  margin: 1%;
+}
+#FreeNews .cardReleases .description {
+  position: absolute;
+  background-color: #011629;
+  opacity: 87%;
+  height: 100%;
+  width: 84.5%;
+  color: white;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+#FreeNews .cardReleases .description a {
+  text-decoration: none;
+  color: white;
+}
+#FreeNews .cardReleases .description span {
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  padding: 8px;
+}
+#FreeNews .cardReleases .description .icon {
+  margin-top: 5%;
+  color: orange;
+  padding-left: 8px;
+}
+#FreeNews .cardReleases .description .icon i {
+  font-size: 12px;
+}
+#FreeNews .cardReleases .description .plus {
+  color: #0470b8;
+  padding-left: 8px;
+}
+#FreeNews .cardReleases .description .check i {
+  color: green;
+}
+#FreeNews .cardReleases .description .buttonTr {
+  width: 100%;
+}
+#FreeNews .cardReleases .description .buttonTr button {
+  background-color: #011629;
+  width: 100%;
+  border-radius: 8px;
+  color: white;
+  border: 1px solid #0470b8;
+  font-weight: 500;
+}
+#FreeNews .cardReleases .description .buttonTr button:hover {
+  color: gray;
+}
+#FreeNews .cardReleases:hover .description {
+  opacity: 85%;
+  visibility: visible;
+}
+
+@media screen and (max-width: 992px) {
+  #FreeNews .cardReleases {
+    width: 30%;
+  }
+  #FreeNews .description {
+    display: none;
+  }
+}
 #FreeMoviesTop {
   position: -webkit-sticky;
   position: sticky;
@@ -1820,6 +2056,256 @@ footer .footerEnd .end a {
   }
   #FreeStars .cardReleases .description {
     display: none;
+  }
+}
+#Register {
+  margin-top: 8%;
+}
+#Register .Form {
+  background-color: white;
+  width: 39.5%;
+}
+#Register .Form .title {
+  padding-top: 30px;
+}
+#Register .Form .title h4 {
+  font-weight: bold;
+}
+#Register .Form input {
+  width: 78%;
+  height: 7vh;
+}
+#Register .Form .name {
+  margin-left: 7%;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+}
+#Register .Form .name input {
+  width: 50%;
+}
+#Register .Form .image {
+  width: 40%;
+}
+#Register .Form .image img {
+  width: 100%;
+}
+#Register .Form .terms {
+  margin-left: 10%;
+  color: rgb(74, 73, 73);
+}
+#Register .Form .terms p {
+  font-size: 13px;
+  font-weight: bold;
+}
+#Register .Form .terms a {
+  text-decoration: none;
+  font-weight: bold;
+}
+#Register .Form .terms input {
+  width: 15px;
+  margin-bottom: 30px;
+}
+#Register .Registerbtn {
+  width: 85%;
+}
+#Register .Registerbtn button {
+  width: 100%;
+  height: 7vh;
+}
+
+@media screen and (max-width: 1000px) {
+  #Register {
+    background-color: white;
+  }
+  #Register .Form {
+    width: 100%;
+    transition: 0.5s;
+  }
+  #Register .Form .name input {
+    width: 100%;
+    margin-top: 10px;
+  }
+  #Register .image {
+    margin-top: 15%;
+    width: 100%;
+  }
+  #Register .image img {
+    width: 100%;
+  }
+}
+#Login {
+  background-color: #171c20;
+}
+#Login .title {
+  padding-top: 10%;
+}
+#Login .title h3 {
+  color: white;
+}
+#Login input {
+  height: 7vh;
+  background-color: #171c20;
+  color: white;
+  width: 40%;
+}
+#Login .forgotPw {
+  width: 70%;
+  font-weight: bold;
+}
+#Login .lgnBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30%;
+  width: 40%;
+}
+#Login .lgnBtn button {
+  background-color: #373d41;
+  width: 100%;
+  color: white;
+}
+#Login .PasswordLogin {
+  position: relative;
+}
+#Login .PasswordLogin .iconType {
+  position: absolute;
+  top: 18px;
+  right: 33%;
+}
+#Login .PasswordLogin .iconType i {
+  color: white;
+}
+#Login .PasswordLogin .iconType #hide2 {
+  display: none;
+}
+
+#detailMovie {
+  margin-top: 8%;
+}
+#detailMovie .InfoMovie {
+  box-shadow: 56px 0px 80px 0px #051c2b;
+  z-index: 1;
+  border: 0;
+}
+#detailMovie .title h3 {
+  color: white;
+}
+#detailMovie .subtitle .info {
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+}
+#detailMovie .StarInfo .star i {
+  color: #ffbf00;
+  font-size: 13px;
+}
+#detailMovie .StarInfo i {
+  color: green;
+}
+#detailMovie .StarInfo span {
+  color: white;
+  font-size: 13px;
+}
+#detailMovie .buttonTr {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+}
+#detailMovie .buttonTr button {
+  background-color: #011629;
+  width: 48%;
+  height: 4vh;
+  border-radius: 8px;
+  color: white;
+  border: 1px solid #0470b8;
+  font-weight: 500;
+}
+#detailMovie .buttonTr button:hover {
+  color: gray;
+}
+#detailMovie .description p {
+  color: white;
+}
+
+#actors .actor {
+  cursor: pointer;
+}
+#actors .actor:hover {
+  opacity: 80%;
+}
+#actors .actor .name {
+  color: white;
+}
+#actors .actor .name i {
+  font-size: 14px;
+  color: #797b7d;
+}
+
+#parentalGuide .title .name h5 {
+  color: white;
+}
+#parentalGuide .title .titleImg img {
+  width: 75%;
+}
+#parentalGuide .age span {
+  color: white;
+  font-weight: 500;
+  font-size: 17px;
+}
+#parentalGuide .age i {
+  color: green;
+  font-size: 18px;
+}
+#parentalGuide .subject p {
+  color: white;
+}
+#parentalGuide .iconMessage .icon i {
+  font-size: 13px;
+  color: white;
+}
+#parentalGuide .iconMessage p {
+  color: white;
+  font-size: 14px;
+}
+#parentalGuide .parentalEnd {
+  color: white;
+}
+#parentalGuide .parentalEnd p {
+  font-size: 14px;
+}
+#parentalGuide .parentalEnd span {
+  font-size: 12px;
+  color: #797b7d;
+  font-weight: 600;
+}
+
+#moreInfo .title h5 {
+  color: white;
+}
+#moreInfo .FirstInfo div {
+  color: white;
+  font-size: 13px;
+}
+#moreInfo .SecondInfo span {
+  font-size: 13px;
+  color: white;
+}
+
+#basketTable {
+  margin-top: 5%;
+}
+
+@media screen and (max-width: 992px) {
+  #basketTable table {
+    margin-top: 15%;
+  }
+  #basketTable table thead tr th {
+    font-size: 13px;
+    font-weight: bold;
+  }
+  #basketTable table tbody tr td {
+    font-size: 13px;
   }
 }
 .dBlock {

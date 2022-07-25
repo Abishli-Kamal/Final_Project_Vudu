@@ -15,7 +15,134 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 2;
+    z-index: 3;
+
+    #releases {
+        .cardReleases {
+            margin-top: 2%;
+            position: relative;
+
+            .description {
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
+
+                position: absolute;
+                background-color: #011629;
+                opacity: 87%;
+                height: 100%;
+                width: 84.5%;
+                color: white;
+                top:0;
+                visibility: hidden;
+
+                span {
+                    font-size: 12px;
+                    font-weight: bold;
+                    color: white;
+                    padding: 8px;
+                }
+
+                .icon {
+                    margin-top: 10%;
+                    color: orange;
+                    padding-left: 8px;
+
+                    i {
+                        font-size: 12px;
+                    }
+                }
+
+                .plus {
+                    color: #0470b8;
+                    padding-left: 8px;
+
+                }
+
+                .check {
+                    i {
+                        color: green;
+                    }
+                }
+
+                .buttonTr {
+                    margin-top: 10%;
+                    width: 100%;
+
+
+                    button {
+                        background-color: #011629;
+                        width: 100%;
+                        border-radius: 8px;
+                        color: white;
+                        border: 1px solid #0470b8;
+                        font-weight: 500;
+
+                        &:hover {
+                            color: gray;
+                        }
+                    }
+
+                }
+            }
+
+            &:hover {
+                .description {
+                    opacity: 85%;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #011629;
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+
+    .overlay-content {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        height: 20vh;
+        background-color: white;
+        z-index: 5;
+
+        input {
+            color: #333333;
+            height: 100%;
+            font-size: 30px;
+            font-weight: 400;
+            border: none;
+            width: 90%;
+        }
+
+        input:focus {
+            outline: none !important;
+        }
+    }
+
+    .overlay a {
+        text-decoration: none;
+        font-size: 36px;
+        display: block;
+        transition: 0.3s;
+
+    }
+
+    .overlay .closebtn {
+        position: absolute;
+        font-size: 60px;
+        color: black;
+    }
 
     .logo {
         color: white;
@@ -66,6 +193,10 @@ header {
                         }
                     }
                 }
+
+                .categoryMovies {
+                    z-index: 1;
+                }
             }
         }
 
@@ -78,7 +209,7 @@ header {
             background-color: #022b4f;
             position: absolute;
             width: 100%;
-            top: 60px;
+            padding-top: 60px;
             padding: 25px 15px;
             display: flex;
             justify-content: space-around;
@@ -211,7 +342,14 @@ header {
             }
         }
     }
+    nav{
+        button:focus{
+            outline: none;
+        }
+    }
+
 }
+
 main {
     margin-top: 4%;
 
@@ -225,14 +363,8 @@ main {
     }
 
     #slider {
-        z-index: -1;
-
-
-        img {
-            z-index: -1;
-        }
-
         ol {
+            z-index: 1;
 
             li {
                 width: 10px;
@@ -287,7 +419,6 @@ main {
                 width: 84.5%;
                 color: white;
                 top:0;
-                opacity: 0;
                 visibility: hidden;
 
                 span {
@@ -323,6 +454,7 @@ main {
                     margin-top: 10%;
                     width: 100%;
 
+
                     button {
                         background-color: #011629;
                         width: 100%;
@@ -333,7 +465,6 @@ main {
 
                         &:hover {
                             color: gray;
-
                         }
                     }
 
@@ -381,6 +512,26 @@ footer {
         }
     }
 
+    .download {
+        width: 45%;
+    }
+
+    .ButtonEnd {
+        width: 90%;
+        display: none !important;
+
+        a {
+            width: 100%;
+            margin-top: 3%;
+            margin-left: 4%;
+
+            button {
+                width: 100%;
+            }
+        }
+
+    }
+
     .icons {
         display: flex;
         justify-content: end;
@@ -413,6 +564,34 @@ footer {
         }
     }
 
+    .respFooter {
+        display: none;
+
+        ul {
+            li {
+                list-style: none;
+                color: #a4b9be;
+                cursor: pointer;
+            }
+        }
+
+        .footerToggle {
+            .footerSelect {
+                ul {
+                    li {
+                        list-style: none;
+                        margin-top: 10px;
+
+                        a {
+                            text-decoration: none;
+                            color: #a4b9be;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .footerEnd {
         width: 100%;
 
@@ -425,19 +604,30 @@ footer {
             }
         }
     }
+
+    .footerSelect {
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .footerToggle.active .footerSelect {
+        max-height: 300px;
+    }
+
+    .footerToggle.active i {
+        transform: rotate(180deg)
+    }
 }
 
 @media screen and (max-width: 992px) {
-    .carousel {
-        z-index: -1;
-    }
     main {
         #releases {
-           
+
             .cardReleases {
                 width: 16%;
                 margin: 0;
                 padding: 10px;
+
                 .description {
                     display: none;
                 }
@@ -472,6 +662,45 @@ footer {
                     display: none;
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width:992px) {
+    footer {
+
+        .download {
+            width: 100%;
+            display: flex;
+            justify-content: center !important;
+            align-items: center;
+
+            div {
+                width: 100%;
+                margin-left: 3%;
+
+                .img {
+                    width: 100%;
+                }
+            }
+
+        }
+
+        .ButtonEnd {
+            margin-top: 3%;
+            display: block !important;
+        }
+
+        .cards {
+            display: none;
+        }
+
+        .respFooter {
+            display: block;
+        }
+
+        .footerEnd {
+            display: none;
         }
     }
 }
@@ -1040,17 +1269,24 @@ footer {
 
 @media screen and(max-width:992px) {
     #headerBottom {
+        .maintitle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
         .sub {
-            display: none;
+            button {
+                width: 100%;
+            }
         }
 
         .filterAll {
-            display: none;
+            height: 60vh;
         }
 
-        .respmenuIcon {
-            display: block !important;
-        }
+
 
     }
 
@@ -1174,6 +1410,7 @@ footer {
     }
 
 }
+
 @media screen and(max-width:992px) {
     #RottenTop {
         .title {
@@ -1379,8 +1616,6 @@ footer {
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-
-
 
     #all-movies {
         .cardReleases {
@@ -1896,9 +2131,9 @@ footer {
     }
 }
 
-#RentTop{
-    .title{
-        h4{
+#RentTop {
+    .title {
+        h4 {
             color: white;
             font-size: 35px;
             font-weight: bold;
@@ -1906,6 +2141,7 @@ footer {
         }
     }
 }
+
 @media screen and (max-width:992px) {
     #RentTop {
         .title {
@@ -1915,9 +2151,10 @@ footer {
         }
     }
 }
-#franchisesTop{
-    .title{
-        h2{
+
+#franchisesTop {
+    .title {
+        h2 {
             color: white;
             font-size: 35px;
             font-weight: bold;
@@ -1925,6 +2162,7 @@ footer {
         }
     }
 }
+
 @media screen and (max-width:992px) {
     #franchisesTop {
         .title {
@@ -1934,57 +2172,155 @@ footer {
         }
     }
 }
-#KidsTop{
-    .title{
-        h2{
+
+#KidsTop {
+    .title {
+        h2 {
             color: white;
             font-size: 35px;
             font-weight: bold;
             padding-top: 20px;
         }
-    } 
+    }
 }
+
 @media screen and (max-width:992px) {
     #KidsTop {
         .title {
             margin-top: 8%;
-           
+
         }
     }
 }
-#HorrorTop{
-    .title{
-        h2{
+
+#HorrorTop {
+    .title {
+        h2 {
             color: white;
             font-size: 35px;
             font-weight: bold;
             padding-top: 20px;
         }
-    } 
+    }
 }
+
 @media screen and (max-width:992px) {
     #HorrorTop {
         .title {
             margin-top: 8%;
-           
+
         }
     }
 }
-#FreeTop{
-    .title{
-        h2{
+
+#FreeTop {
+    .title {
+        h2 {
             color: white;
             font-size: 35px;
             font-weight: bold;
             padding-top: 20px;
         }
-    } 
+    }
 }
+
 @media screen and (max-width:992px) {
     #FreeTop {
         .title {
             margin-top: 8%;
-           
+
+        }
+    }
+}
+
+#FreeNews {
+    .cardReleases {
+        position: relative;
+        margin: 1%;
+
+        .description {
+            a {
+                text-decoration: none;
+                color: white;
+            }
+
+            position: absolute;
+            background-color: #011629;
+            opacity: 87%;
+            height: 100%;
+            width: 84.5%;
+            color: white;
+            top:0;
+            opacity: 0;
+            visibility: hidden;
+
+            span {
+                font-size: 12px;
+                font-weight: bold;
+                color: white;
+                padding: 8px;
+            }
+
+            .icon {
+                margin-top: 5%;
+                color: orange;
+                padding-left: 8px;
+
+                i {
+                    font-size: 12px;
+                }
+            }
+
+            .plus {
+                color: #0470b8;
+                padding-left: 8px;
+
+            }
+
+            .check {
+                i {
+                    color: green;
+                }
+            }
+
+            .buttonTr {
+                width: 100%;
+
+                button {
+                    background-color: #011629;
+                    width: 100%;
+                    border-radius: 8px;
+                    color: white;
+                    border: 1px solid #0470b8;
+                    font-weight: 500;
+
+                    &:hover {
+                        color: gray;
+
+                    }
+                }
+
+            }
+        }
+
+        &:hover {
+            .description {
+                opacity: 85%;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:992px) {
+    #FreeNews {
+
+        .cardReleases {
+            width: 30%;
+        }
+
+        .description {
+            display: none;
         }
     }
 }
@@ -2308,7 +2644,8 @@ footer {
     }
 
 }
-#FreeAllTime{
+
+#FreeAllTime {
     .cardReleases {
         position: relative;
         margin: 1%;
@@ -2386,18 +2723,21 @@ footer {
         }
     }
 }
+
 @media screen and (max-width:992px) {
     #FreeAllTime {
         .cardReleases {
             width: 30%;
-            .description{
+
+            .description {
                 display: none;
             }
         }
-       
+
     }
 }
-#audience{
+
+#audience {
     .cardReleases {
         position: relative;
         margin: 1%;
@@ -2475,19 +2815,21 @@ footer {
         }
     }
 }
+
 @media screen and (max-width:992px) {
     #audience {
         .cardReleases {
             width: 30%;
-            .description{
+
+            .description {
                 display: none;
             }
         }
-       
+
     }
 }
 
-#FreeStars{
+#FreeStars {
     .cardReleases {
         position: relative;
         margin: 1%;
@@ -2565,17 +2907,378 @@ footer {
         }
     }
 }
+
 @media screen and (max-width:992px) {
     #FreeStars {
         .cardReleases {
             width: 30%;
-            .description{
+
+            .description {
                 display: none;
             }
         }
-       
+
     }
 }
+
+#Register {
+    margin-top: 8%;
+
+    .Form {
+        background-color: white;
+        width: 39.5%;
+
+        .title {
+            padding-top: 30px;
+
+            h4 {
+                font-weight: bold;
+            }
+        }
+
+        input {
+            width: 78%;
+            height: 7vh;
+        }
+
+        .name {
+            margin-left: 7%;
+            justify-content: center;
+            align-items: center;
+            width: 85%;
+
+            input {
+                width: 50%;
+            }
+        }
+
+        .image {
+            width: 40%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .terms {
+            margin-left: 10%;
+            color: rgb(74, 73, 73);
+
+            p {
+                font-size: 13px;
+                font-weight: bold;
+            }
+
+            a {
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            input {
+                width: 15px;
+                margin-bottom: 30px;
+
+            }
+
+        }
+
+    }
+
+    .Registerbtn {
+        width: 85%;
+
+        button {
+            width: 100%;
+            height: 7vh;
+        }
+    }
+}
+
+@media screen and (max-width:1000px) {
+    #Register {
+        background-color: white;
+
+        .Form {
+            width: 100%;
+            transition: 0.5s;
+
+            .name {
+                input {
+                    width: 100%;
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        .image {
+            margin-top: 15%;
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+#Login {
+    background-color: #171c20;
+
+    .title {
+        padding-top: 10%;
+
+        h3 {
+            color: white;
+        }
+    }
+
+    input {
+        height: 7vh;
+        background-color: #171c20;
+        color: white;
+        width: 40%;
+    }
+
+    .forgotPw {
+        width: 70%;
+        font-weight: bold;
+    }
+
+    .lgnBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 30%;
+        width: 40%;
+
+        button {
+            background-color: #373d41;
+            width: 100%;
+            color: white;
+        }
+    }
+    .PasswordLogin{
+        position: relative;
+        .iconType{
+            position: absolute;
+            top: 18px;
+            right: 33%;
+            i{
+                color: white;
+            }
+            #hide2{
+                display: none;
+            }
+        }
+    }
+   
+}
+
+#detailMovie {
+    margin-top: 8%;
+
+    .InfoMovie {
+        box-shadow: 56px 0px 80px 0px #051c2b;
+        z-index: 1;
+        border: 0;
+    }
+
+    .title {
+        h3 {
+            color: white;
+        }
+    }
+
+    .subtitle {
+        .info {
+            color: white;
+            font-size: 15px;
+            font-weight: 500;
+        }
+    }
+
+    .StarInfo {
+        .star {
+            i {
+                color: #ffbf00;
+                font-size: 13px;
+            }
+        }
+
+        i {
+            color: green;
+        }
+
+        span {
+            color: white;
+            font-size: 13px;
+        }
+    }
+
+    .buttonTr {
+        width: 90%;
+        display: flex;
+        justify-content: space-around;
+
+        button {
+            background-color: #011629;
+            width: 48%;
+            height: 4vh;
+            border-radius: 8px;
+            color: white;
+            border: 1px solid #0470b8;
+            font-weight: 500;
+
+            &:hover {
+                color: gray;
+
+            }
+        }
+
+    }
+
+    .description {
+        p {
+            color: white;
+        }
+    }
+}
+
+#actors {
+
+    .actor {
+        cursor: pointer;
+
+        &:hover {
+            opacity: 80%;
+        }
+
+        .name {
+            color: white;
+
+            i {
+                font-size: 14px;
+                color: #797b7d;
+            }
+        }
+    }
+}
+
+#parentalGuide {
+    .title {
+        .name {
+            h5 {
+                color: white;
+            }
+        }
+
+        .titleImg {
+            img {
+                width: 75%;
+            }
+        }
+    }
+
+    .age {
+        span {
+            color: white;
+            font-weight: 500;
+            font-size: 17px;
+        }
+
+        i {
+            color: green;
+            font-size: 18px;
+        }
+    }
+
+    .subject {
+        p {
+            color: white;
+        }
+    }
+
+    .iconMessage {
+        .icon {
+            i {
+                font-size: 13px;
+                color: white;
+            }
+        }
+
+        p {
+            color: white;
+            font-size: 14px;
+        }
+    }
+
+    .parentalEnd {
+        color: white;
+
+        p {
+            font-size: 14px;
+        }
+
+        span {
+            font-size: 12px;
+            color: #797b7d;
+            font-weight: 600;
+        }
+    }
+}
+
+#moreInfo {
+    .title {
+        h5 {
+            color: white;
+        }
+    }
+
+    .FirstInfo {
+        div {
+            color: white;
+            font-size: 13px;
+        }
+    }
+
+    .SecondInfo {
+        span {
+            font-size: 13px;
+            color: white;
+        }
+    }
+}
+
+#basketTable {
+    margin-top: 5%;
+}
+
+@media screen and (max-width:992px) {
+    #basketTable {
+        table{
+            margin-top: 15%;
+            thead{
+                tr{
+                    th{
+                        font-size: 13px;
+                        font-weight: bold;
+                    }
+                }
+               
+            }
+            tbody{
+                tr{
+                    td{
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
 .dBlock {
     display: block !important;
 }
